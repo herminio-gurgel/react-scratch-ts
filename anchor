@@ -1,0 +1,52 @@
+#!/bin/bash
+
+SERVICE=app
+COMPOSE="docker compose"
+
+if ! docker info > /dev/null 2>&1; then
+  echo "Docker is not running."
+  exit 1
+fi
+
+case "$1" in
+  up)
+    shift
+    $COMPOSE up "$@"
+    exit $?
+    ;;
+  down)
+    shift
+    $COMPOSE down "$@"
+    exit $?
+    ;;
+  restart)
+    shift
+    $COMPOSE down "$@"
+    $COMPOSE up -d "$@"
+    exit $?
+    ;;
+  stop)
+    shift
+    $COMPOSE stop "$@"
+    exit $?
+    ;;
+  start)
+    shift
+    $COMPOSE start "$@"
+    exit $?
+    ;;
+  shell)
+    $COMPOSE exec $SERVICE sh
+    exit $?
+    ;;
+esac
+
+if ! $COMPOSE ps --services --filter "status=running" | grep -q "^$SERVICE$"; then
+  echo "Anchor is not running."
+  echo
+  echo "You may start Anchor using the following commands:"
+  echo "  './anchor up'  or  './anchor up -d'"
+  exit 1
+fi
+
+$COMPOSE exec -it $SERVICE "$@"

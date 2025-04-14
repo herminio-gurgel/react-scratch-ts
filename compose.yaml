@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    image: react-scratch-ts-app
+    ports:
+      - "5173:5173"
+      - "4173:4173"
+    volumes:
+      - .:/usr/src/app
+    tty: true
+    stdin_open: true
