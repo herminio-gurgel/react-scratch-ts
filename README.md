@@ -2,6 +2,7 @@
 ![React](https://img.shields.io/badge/react-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=white)
 ![Jest](https://img.shields.io/badge/jest-99424f?logo=jest)
+![Testing Library](https://img.shields.io/badge/Testing%20Library-%F0%9F%A6%86-blue?logo=testing-library&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-646CFF?logo=vite&logoColor=white)
 ![Husky](https://img.shields.io/badge/hooks-husky-8E64C5?logo=git)
 ![Conventional Commits](https://img.shields.io/badge/commits-conventional-FFA500?logo=git)
@@ -21,8 +22,8 @@ projects, offering a ready-to-use setup with useful development and quality tool
   - `eslint` + `prettier`
   - `commitlint` with `@commitlint/config-conventional`
   - All integrated with `husky` pre-commit and commit-msg hooks
-  - `lint-staged` runs ESLint and Prettier only on staged files
-- **Jest** and `react-test-renderer` already set up for testing
+  - `lint-staged` runs ESLint, Prettier, Jest and Typescript checks only on staged files
+- **Jest** and **Testing Library** already set up for testing
 - **Docker support** for easy setup and environment isolation
   - **Git** for better integration with githooks when using docker
   - **Anchor** lightweight CLI that helps you interact with Docker in a simple way
@@ -32,7 +33,7 @@ projects, offering a ready-to-use setup with useful development and quality tool
 - Vite + React + TypeScript
 - ESLint + Prettier + Commitlint
 - Husky + Lint-Staged
-- Jest + React Test Renderer
+- Jest + Testing Library
 - Docker
 
 ---
