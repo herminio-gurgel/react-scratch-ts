@@ -4,13 +4,24 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
+import reactPlugin from "eslint-plugin-react";
 
 export default tseslint.config(
   { ignores: ["dist"] },
   {
     extends: [
       js.configs.recommended,
-      ...tseslint.configs.recommended,
+      tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
+      tseslint.configs.recommendedTypeChecked,
+      {
+        languageOptions: {
+          parserOptions: {
+            projectService: true,
+            tsconfigRootDir: import.meta.dirname,
+          },
+        },
+      },
       eslintConfigPrettier,
     ],
     files: ["**/*.{ts,tsx}"],
@@ -21,6 +32,7 @@ export default tseslint.config(
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+      "react-plugin": reactPlugin,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
