@@ -8,9 +8,9 @@ USER node
 
 WORKDIR /usr/src/app
 
+COPY . .
+
 RUN git config --global init.defaultBranch main && \
     git config --global user.email "herminio.gurgel@gmail.com" && \
     git config --global user.name "Hermínio Gurgel" && \
     git init
-
-COPY . .
