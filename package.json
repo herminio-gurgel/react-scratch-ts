@@ -46,6 +46,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.5.0",
     "prettier": "3.5.3",
+    "ts-node": "^10.9.2",
     "tsc-files": "^1.1.4",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.31.1",
@@ -66,26 +67,5 @@
     "*.{ts, tsx}": [
       "tsc-files --noEmit --project tsconfig.app.json"
     ]
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.ts"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-      "\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/src/__mocks__/fileMock.js"
-    }
   }
 }
