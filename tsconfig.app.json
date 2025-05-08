@@ -25,5 +25,10 @@
     "allowSyntheticDefaultImports": true,
     "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "jest.config.ts", "eslint.config.ts"]
+  "include": [
+    "src",
+    "jest.config.ts",
+    "eslint.config.ts",
+    "commitlint.config.ts"
+  ]
 }
